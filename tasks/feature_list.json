@@ -1,0 +1,29 @@
+[
+  {
+    "id": "feature-001",
+    "category": "functional",
+    "priority": "high",
+    "description": "（功能描述，一句话）",
+    "steps": [
+      "（验收步骤1）",
+      "（验收步骤2）",
+      "（验收步骤3）"
+    ],
+    "passes": false,
+    "sprint": "task-001",
+    "notes": ""
+  },
+  {
+    "id": "feature-002",
+    "category": "ui",
+    "priority": "medium",
+    "description": "（功能描述，一句话）",
+    "steps": [
+      "（验收步骤1）",
+      "（验收步骤2）"
+    ],
+    "passes": false,
+    "sprint": "task-002",
+    "notes": ""
+  }
+]
