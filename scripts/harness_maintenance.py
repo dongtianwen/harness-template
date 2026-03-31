@@ -1,6 +1,6 @@
 """
 Harness 后台维护程序 (官方向量版)
-- 扫描项目状态，通过智谱官方 glm-4-flash 生成维护报告
+- 扫描项目状态，通过智谱官方 glm-4.7-flash 生成维护报告
 - 自动绕过环境变量中可能存在的无效占位符
 - 报告输出到 reports/maintenance-{date}.md
 """
@@ -35,7 +35,7 @@ def get_verified_key():
 # ========== 配置 ==========
 ZHIPU_API_KEY = get_verified_key()
 ZHIPU_API_URL = "https://open.bigmodel.cn/api/paas/v4/chat/completions"
-ZHIPU_MODEL = "glm-4-flash"
+ZHIPU_MODEL = "glm-4.7-flash"
 API_TIMEOUT = 25
 # ==========================
 

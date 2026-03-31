@@ -15,9 +15,9 @@
    双击运行 `scripts\start.bat`，它会自动为你安装 pre-commit 钩子并拉取最新代码。每次开始工作前都推荐运行一次以获取项目状态。
 
 2. **配置 AI 维护密钥（必须）**
-   后台维护脚本使用 NVIDIA NIM 进行自我报告。在系统环境变量中添加你的 API 密钥：
-   `变量名：NVIDIA_API_KEY`
-   `变量值：你的 NVIDIA API 密钥`
+   后台维护脚本使用智谱官方 API 生成维护报告。在系统环境变量中添加你的 API 密钥：
+   `变量名：ZHIPU_API_KEY`
+   `变量值：你的智谱 API 密钥`
 
 3. **设置开机自动维护（可选）**
    如果你希望电脑每天开机自动跑一次状态检查：
@@ -28,6 +28,37 @@
 2. 查看 `STATE.md` 了解当前进度
 3. 查看 `tasks/` 认领或新建任务
 4. 执行完毕后更新 `reports/`
+
+## 浏览器验证兼容层
+
+本模板默认采用三层兼容方案：
+
+1. `Chrome DevTools MCP` 优先
+2. `Playwright` 标配
+3. 命令行验证兜底
+
+这意味着：
+- 支持 MCP 的 AI 工具可以直接走实时浏览器验证。
+- 支持终端执行的 AI 工具，即使不支持 MCP，也可以通过 `Playwright` 跑浏览器级验收。
+- 再不支持浏览器工具时，仍可运行 `node tests/verify-time-page.mjs` 做最低保障验证。
+
+### 最小环境要求
+- Node.js 18+
+- npm 或 bun
+- 如需浏览器级自动化验证：安装 `Playwright`
+
+### 常用命令
+```bash
+npm install
+npx playwright install
+npm run test:cli
+npm run test:browser
+```
+
+### 兼容性说明
+- 不是所有 AI 工具都能直接使用 `Chrome DevTools MCP`。
+- 大多数支持文件编辑和终端执行的 AI 工具，都可以使用 `Playwright` 脚本。
+- 只支持对话、不能运行命令的工具，仍然无法完整执行这套模板。
 
 ## 目录说明
 | 目录/文件 | 用途 |
@@ -49,4 +80,3 @@
 - 所有修改需可验证
 - 所有任务需有记录
 - AI 状态持久化在 STATE.md
-Test commit

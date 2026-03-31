@@ -113,8 +113,8 @@
 如果当前环境支持 Chrome DevTools MCP：
   使用浏览器工具直接验证界面输出（DOM 快照、截图、交互测试）
 
-如果是长期迭代项目且有 Playwright 测试脚本：
-  运行 playwright test，输出实际结果
+如果仓库已提供 Playwright 测试脚本且工具支持终端执行：
+  优先运行 playwright test，输出实际结果
 
 否则：
   运行验收命令，输出真实终端结果
@@ -123,6 +123,8 @@
 若任何一项为 No，不允许关闭任务，必须说明原因。
 完成后按 reports/README.md 格式输出完整报告，更新 STATE.md。
 ```
+
+> 模板默认兼容策略：MCP 优先、Playwright 标配、命令行兜底。
 
 ---
 

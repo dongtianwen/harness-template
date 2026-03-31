@@ -23,14 +23,14 @@ scripts\start.bat
 ## 后台维护程序
 
 ### harness_maintenance.py
-扫描项目文件，调用 NVIDIA NIM Qwen3.5 生成维护报告。
+扫描项目文件，调用智谱官方 glm-4.7-flash 生成维护报告。
 
-**模型：** `qwen/qwen3.5-35b-a3b`（免费，速度快）
+**模型：** `glm-4.7-flash`
 
 **首次设置：**
 ```cmd
-:: 获取免费 API Key：https://build.nvidia.com/
-setx NVIDIA_API_KEY 你的密钥
+:: 获取 API Key：https://open.bigmodel.cn/
+setx ZHIPU_API_KEY 你的密钥
 ```
 
 **手动运行：**

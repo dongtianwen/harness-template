@@ -1,0 +1,13 @@
+{
+  "name": "harness-template-v1.5",
+  "version": "1.5.0",
+  "private": true,
+  "description": "Harness template with MCP-first, Playwright-standard, CLI-fallback browser verification.",
+  "scripts": {
+    "test:browser": "playwright test",
+    "test:browser:install": "playwright install"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.0"
+  }
+}
